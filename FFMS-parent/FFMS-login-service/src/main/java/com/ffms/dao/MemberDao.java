@@ -9,7 +9,6 @@ import com.ffms.utils.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,7 +53,8 @@ public class MemberDao {
     public List<Bill> selectThreeMonthsAmount(User user) {
         List<Bill> consumerList = new ArrayList();
         int familyid = user.getFamilyId();
-        String sql ="SELECT  id ,category_id,consumer_name,consumer_time,consume_amount,trading_party,type,remarks,user_id,family_id FROM tb_consumer where consumer_time >= DATE_SUB(CURDATE(), INTERVAL 3 MONTH) and family_id= ?";
+        String sql ="SELECT  id ,category_id,consumer_name,consumer_time,consume_amount,trading_party,type,remarks,user_id,family_id " +
+                "FROM tb_consumer WHERE consumer_time >= DATE_SUB( DATE_ADD(curdate(),interval -day(curdate())+1 day) , INTERVAL 3 MONTH );";
         try {
             PreparedStatement pStmt = conn.prepareStatement(sql);
             pStmt.setInt(1,familyid);
@@ -78,4 +78,5 @@ public class MemberDao {
         }
         return consumerList;
     }
+
 }
