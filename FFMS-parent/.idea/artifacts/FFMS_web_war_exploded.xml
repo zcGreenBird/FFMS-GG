@@ -1,0 +1,34 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="FFMS-web:war exploded">
+    <output-path>$PROJECT_DIR$/FFMS-web/target/FFMS-web</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>FFMS-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="FFMS-web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="FFMS-login-service-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="FFMS-login-service" />
+          </element>
+          <element id="archive" name="FFMS-common-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="FFMS-common" />
+          </element>
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.6" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time:2.9.9" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/FFMS-web/target/FFMS-web/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="FFMS-web/web/Web" />
+    </root>
+  </artifact>
+</component>

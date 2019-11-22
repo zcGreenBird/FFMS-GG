@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="FFMS-web:war">
+    <output-path>$PROJECT_DIR$/FFMS-web/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>FFMS-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="FFMS-web.war">
+      <element id="artifact" artifact-name="FFMS-web:war exploded" />
+    </root>
+  </artifact>
+</component>

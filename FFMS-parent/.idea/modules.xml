@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FFMS-common/FFMS-common.iml" filepath="$PROJECT_DIR$/FFMS-common/FFMS-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FFMS-import-bill-service/FFMS-import-bill-service.iml" filepath="$PROJECT_DIR$/FFMS-import-bill-service/FFMS-import-bill-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FFMS-login-service/FFMS-login-service.iml" filepath="$PROJECT_DIR$/FFMS-login-service/FFMS-login-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FFMS-parent.iml" filepath="$PROJECT_DIR$/FFMS-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FFMS-web/FFMS-web.iml" filepath="$PROJECT_DIR$/FFMS-web/FFMS-web.iml" />
+    </modules>
+  </component>
+</project>
