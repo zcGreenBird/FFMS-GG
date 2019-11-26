@@ -61,8 +61,8 @@ public class ResponseDao {
     /**
      * 查询最近一次的消费记录
      */
-    public List<LastTransResponse> selectLastTrans() {
-        String sql = "SELECT user_id,consumer_name,consumer_time,consumer_amount FROM (SELECT user_id,consumer_name,consumer_time,consumer_amount FROM tb_consumer ORDER BY consumer_time DESC) c GROUP BY user_id;";
+    public List<LastTransResponse> selectLastTrans(int familyId) {
+        String sql = "SELECT user_id,consumer_name,consumer_time,consumer_amount FROM tb_consumer where family_id = "+familyId+" GROUP BY user_id ORDER BY consumer_time DESC";
         List<LastTransResponse> list = new ArrayList<>();
         try {
             Statement stmt = conn.createStatement();
@@ -86,7 +86,7 @@ public class ResponseDao {
      * 查询三个月每个月的总消费
      */
     public List<MonthResponse> selectMonthConsume() {
-        String sql = "SELECT MONTH(consumer_time) AS '月份',SUM(consumer_amount) AS '金额' FROM tb_consumer GROUP BY MONTH(consumer_time) DESC;";
+        String sql = "SELECT MONTH(consumer_time) AS '月份',SUM(consumer_amount) AS '金额' FROM tb_consumer GROUP BY MONTH(consumer_time) DESC; ";
         List<MonthResponse> list = null;
         try {
             Statement stmt = conn.createStatement();
